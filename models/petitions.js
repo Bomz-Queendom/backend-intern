@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const imageSchema = require("./image");
 
 const petitionsSchema = new mongoose.Schema({
-    agent_id: mongoose.ObjectId,
+    agentId: mongoose.ObjectId,
     petitionType: String,
     problemDetail: String,
     images: Array,

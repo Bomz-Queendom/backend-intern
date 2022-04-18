@@ -1,9 +1,42 @@
 const express = require("express");
 const router = express.Router();
 const { midCreate, midFindOne, midUpdate, midDelete } = require("./mid/agentMid");
-const { createAgent, findAllAgents, findOneAgent, searchAgent, updateAgent, deleteAgent } = require("./routerFunc/agentFunc");
+const { createAgent, findAllAgents, findOneAgent, searchAgent, updateAgent, deleteAgent } = require("./controller/agentFunc");
 
+
+/**
+ * @swagger
+ * /agent/create:
+ *  post:
+ *      description: create agent.
+ *      tags : [Agent]
+ *      parameters:
+ *          - in: formData
+ *            name: firstName
+ *            type: string
+ *          - in: formData
+ *            name: lastName
+ *            type: string
+ *          - in: formData
+ *            name: agentPin
+ *            type: string
+ *          - in: formData
+ *            name: email
+ *            type: string
+ *          - in: formData
+ *            name: jobTitle
+ *            type: string
+ *          - in: formData
+ *            name: phoneNum
+ *            type: string
+ *      responses:
+ *          200:
+ *              description : success
+ *          400: 
+ *              description : Bad Request
+ */
 router.post("/create", midCreate, createAgent);
+
 /**
  * @swagger
  * /agent/getAll:
@@ -61,29 +94,32 @@ router.get("/search", searchAgent);
 
 /**
  * @swagger
- * /agent/create:
- *  post:
+ * /agent/update/{id}:
+ *  patch:
  *      description: create agent.
  *      tags : [Agent]
  *      parameters:
- *          - in: body
- *            name: agent
- *            description: the agent to create.
- *            schema : 
- *              type: object
- *              properties:
- *                  firstName:
- *                      type: string
- *                  lastName:
- *                      type: string
- *                  agentPin: 
- *                      type: string
- *                  email: 
- *                      type: string
- *                  jobTitle: 
- *                      type: string
- *                  phoneNum: 
- *                      type: string
+ *          - in: path
+ *            name: id
+ *            description: agent id
+ *          - in: formData
+ *            name: firstName
+ *            type: string
+ *          - in: formData
+ *            name: lastName
+ *            type: string
+ *          - in: formData
+ *            name: agentPin
+ *            type: string
+ *          - in: formData
+ *            name: email
+ *            type: string
+ *          - in: formData
+ *            name: jobTitle
+ *            type: string
+ *          - in: formData
+ *            name: phoneNum
+ *            type: string
  *      responses:
  *          200:
  *              description : success

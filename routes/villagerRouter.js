@@ -1,7 +1,7 @@
 const express = require("express");
 const { midCreate, midFindOne, midUpdate, midDelete } = require("./mid/villagerMid");
 const router = express.Router();
-const { findAllVillagers, findOneVillager, createVillager, villagerSearch, updateVillager, deleteVillager } = require("./routerFunc/villagerFunc");
+const { findAllVillagers, findOneVillager, createVillager, villagerSearch, updateVillager, deleteVillager } = require("./controller/villagerFunc");
 
 /**
  * @swagger

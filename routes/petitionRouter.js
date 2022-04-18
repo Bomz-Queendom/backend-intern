@@ -1,6 +1,6 @@
 const express = require("express");
 const { midCreate, midGetOne } = require("./mid/petitionMid");
-const { createPetition, getAllPetition, getOnePetition } = require("./routerFunc/petitionFunc");
+const { createPetition, getAllPetition, getOnePetition, deletePetition } = require("./controller/petitionFunc");
 const router = express.Router();
 
 /**
@@ -9,6 +9,9 @@ const router = express.Router();
  *  post:
  *      description: create petition by villager id.
  *      tags : [Petition]
+ *      consumes:
+ *          - multipart/form-data
+ *          - application/json
  *      parameters:
  *          - in: path
  *            name: id
@@ -17,29 +20,37 @@ const router = express.Router();
  *            name: images
  *            type: file
  *            description: petition images
- *          - in: body
- *            name: petition
- *            description: the petition to create.
- *            schema : 
- *              type: object
- *              properties:
- *                  petitionType: 
- *                      type: string
- *                  problemDetail:
- *                      type: string
- *                  needCorrective:
- *                      type: string
- *                  status:
- *                      type: string
- *                  createDate:
- *                      type: string
+ *          - in: formData
+ *            name: agentId
+ *            type: string
+ *            description: the agent id to create.
+ *          - in: formData
+ *            name: petitionType
+ *            type: string
+ *            description: the petitionType to create.
+ *          - in: formData
+ *            name: problemDetail
+ *            type: string
+ *            description: the problemDetail to create.
+ *          - in: formData
+ *            name: needCorrective
+ *            type: string
+ *            description: the needCorrective to create.
+ *          - in: formData
+ *            name: status
+ *            type: string
+ *            description: the status to create.
+ *          - in: formData
+ *            name: createDate
+ *            type: string
+ *            description: the createDate to create.
  *      responses:
  *          200:
  *              description : success
  *          400: 
  *              description : Bad Request
  */
-router.post("/create/:id", createPetition);
+router.post("/create/:id", midCreate, createPetition);
 
 /**
  * @swagger
@@ -56,6 +67,27 @@ router.post("/create/:id", createPetition);
  *              description : Bad Request
  */
 router.get("/getAll", getAllPetition);
+
+
+/**
+ * @swagger
+ * /petition/delete/{id}:
+ *  delete:
+ *      description: Delete One Petition by petition id.
+ *      tags: [Petition]
+ *      parameters:
+ *          - in: path
+ *            name: id
+ *            description: petition id
+ *      responses:
+ *          200:
+ *              description : success
+ *          404: 
+ *              description : The data to be deleted does not exist in the database.
+ *          400: 
+ *              description : Bad Request
+ */
+router.delete("/delete/:id", deletePetition);
 router.use("/images", express.static('./public/images/petitionImage'));
 
 module.exports = router;

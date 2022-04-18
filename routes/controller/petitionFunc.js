@@ -1,10 +1,6 @@
 const Villager = require("../../models/villager");
 const logger = require("../../logger/winstonLogger");
 const { validationResult } = require("express-validator");
-const fs = require('fs');
-const { index } = require("../../models/image");
-const req = require("express/lib/request");
-const res = require("express/lib/response");
 
 
 exports.createPetition = async (req, res) => {
@@ -16,17 +12,14 @@ exports.createPetition = async (req, res) => {
         }
         let imagesInput = req.files.images;
         let dataInput = req.body;
-        let filesName = [];
-        imagesInput.forEach(index => {
-            filesName.push(`${Date.now()}-${index.name}`);
-            index.mv(`./public/images/petitionImage/${Date.now()}-${index.name}`)
-        });
-        dataInput.images = filesName;
+        let filesNames = [];
+        let imageName = `${Date.now()}-${imagesInput.name}`;
+        filesNames.push(imageName);
+        imagesInput.mv(`./public/images/petitionImage/${imageName}`);
+        dataInput = Object.assign(dataInput, { images: filesNames });
         const id = req.params.id;
         const options = { new: true };
-        let data = await Villager.findById(id);
-        data.petitions.push(dataInput);
-        let newData = await Villager.findByIdAndUpdate(id, data, options);
+        let newData = await Villager.findByIdAndUpdate(id, { $push: { petitions: dataInput } }, options);
         return res.status(200).json("Create petition successfuly.");
     } catch (error) {
         logger.error(error.massage);
@@ -48,6 +41,33 @@ exports.getAllPetition = async (req, res) => {
             }
             return res.status(200).json(index.petitions);
         });
+    } catch (error) {
+        logger.error(error.massage);
+        return res.status(400).json({ message: error.message });
+    }
+}
+
+exports.deletePetition = async (req, res) => {
+    try {
+        const error = validationResult(req);
+        if (!error.isEmpty()) {
+            logger.error(error.array());
+            return res.status(400).json({ error: error.array() });
+        }
+        let petitionId = req.params.id;
+        let findData = await Villager.findOne({ 'petitions.id': petitionId });
+        let obj = null;
+        findData.petitions.forEach(index => {
+            if (index.id === petitionId) {
+                obj = index;
+            }
+        });
+        let data = await Villager.findOneAndUpdate({ "petitions.id": petitionId }, {
+            $pull: {
+                'petitions': obj
+            }
+        });
+        return res.status(200).json(`delete petition id ${petitionId} success.`);
     } catch (error) {
         logger.error(error.massage);
         return res.status(400).json({ message: error.message });
