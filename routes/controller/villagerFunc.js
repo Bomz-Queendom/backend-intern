@@ -52,7 +52,6 @@ exports.villagerSearch = async (req, res) => {
             logger.error(`${Object.values(searchText)} not found`);
             return res.status(404).json({ massage: `${Object.values(searchText)} not found` });
         }
-        logger.info(searchData);
         return res.status(200).json(searchData);
     } catch (error) {
         logger.error(error.massage);
