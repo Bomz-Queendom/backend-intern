@@ -1,0 +1,78 @@
+{"level":"info","message":"Tue Apr 19 2022 17:20:15 GMT+0700 (เวลาอินโดจีน) GET / 200 218 - 11.208 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:20:15 GMT+0700 (เวลาอินโดจีน) GET /stylesheets/style.css 200 119 - 9.676 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:20:15 GMT+0700 (เวลาอินโดจีน) GET /favicon.ico 404 876 - 3.580 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:21:08 GMT+0700 (เวลาอินโดจีน) GET /petition/getAll 200 1538 - 17.328 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:24:16 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e809df1a90100949ad0f7 200 219 - 9.224 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:24:30 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e809df1a90100949ad0f 400 102 - 1.337 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:24:44 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e809df1a90100949ad0f8 304 - - 5.653 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:24:48 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e809df1a90100949ad0f7 304 - - 3.884 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:27:05 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e809df1a90100949ad0f7 304 - - 28.823 ms\n","meta":{"serverLogs":"server-logs"}}
+{"error":[{"location":"params","msg":"Invalid value","param":"id","value":"625e809df1a90100949ad0f"}],"level":"error","message":"(..\\routes\\controller\\petitionFunc.js:51)❯❯▶"}
+{"level":"info","message":"Tue Apr 19 2022 17:27:10 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e809df1a90100949ad0f 400 102 - 957.453 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:28:15 GMT+0700 (เวลาอินโดจีน) GET /agent/getAll 304 - - 14.359 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:29:20 GMT+0700 (เวลาอินโดจีน) GET /petition/getAll 304 - - 23.274 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:29:43 GMT+0700 (เวลาอินโดจีน) DELETE /petition/delete/625e809df1a90100949ad0f8 200 54 - 15.200 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:29:52 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e809df1a90100949ad0f8 200 218 - 8.353 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:32:09 GMT+0700 (เวลาอินโดจีน) POST /agent/create 200 56 - 37.899 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:32:18 GMT+0700 (เวลาอินโดจีน) GET /agent/getAll 200 381 - 11.483 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:32:28 GMT+0700 (เวลาอินโดจีน) GET /agent/getOne/625e8fa97b87b87067ece61e 200 187 - 4.010 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:33:05 GMT+0700 (เวลาอินโดจีน) PATCH /agent/update/625e8fa97b87b87067ece61e 200 65 - 14.240 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:33:12 GMT+0700 (เวลาอินโดจีน) GET /agent/getOne/625e8fa97b87b87067ece61e 200 164 - 3.222 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:33:20 GMT+0700 (เวลาอินโดจีน) DELETE /agent/delete/625e8fa97b87b87067ece61e 200 23 - 3.900 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"error","message":"log❯❯▶ 625e8fa97b87b87067ece61e not found."}
+{"level":"info","message":"Tue Apr 19 2022 17:33:26 GMT+0700 (เวลาอินโดจีน) GET /agent/getOne/625e8fa97b87b87067ece61e 404 37 - 856.165 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:33:34 GMT+0700 (เวลาอินโดจีน) GET /villager/getAll 200 1120 - 7.668 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:34:09 GMT+0700 (เวลาอินโดจีน) DELETE /petition/delete/624fdb172c238ba9c0261c66 200 54 - 17.883 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:34:25 GMT+0700 (เวลาอินโดจีน) GET /petition/getAll 200 658 - 4.032 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:34:38 GMT+0700 (เวลาอินโดจีน) GET /villager/getOne/624fdb172c238ba9c0261c66 200 1118 - 4.592 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:34:51 GMT+0700 (เวลาอินโดจีน) DELETE /villager/delete/624fdb172c238ba9c0261c66 200 25 - 6.213 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"error","message":"log❯❯▶ 624fdb172c238ba9c0261c66 not found."}
+{"level":"info","message":"Tue Apr 19 2022 17:35:00 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/624fdb172c238ba9c0261c66 404 37 - 41.449 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"error","message":"log❯❯▶ Villagers collection is empty."}
+{"level":"info","message":"Tue Apr 19 2022 17:35:05 GMT+0700 (เวลาอินโดจีน) GET /petition/getAll 404 44 - 21.118 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"error","message":"log❯❯▶ Villagers collection is empty."}
+{"level":"info","message":"Tue Apr 19 2022 17:35:16 GMT+0700 (เวลาอินโดจีน) GET /petition/getAll 404 44 - 17.374 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"error","message":"log❯❯▶ Villagers collection is empty."}
+{"level":"info","message":"Tue Apr 19 2022 17:36:19 GMT+0700 (เวลาอินโดจีน) GET /villager/getAll 404 44 - 14.718 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:39:32 GMT+0700 (เวลาอินโดจีน) POST /villager/create 200 453 - 20.718 ms\n","meta":{"serverLogs":"server-logs"}}
+{"0":{"location":"body","msg":"Invalid value","param":"dateOfBirth","value":"2001-08-22T17:00:00.000Z"},"level":"error","message":"(..\\routes\\controller\\villagerFunc.js:83)❯❯▶"}
+{"level":"info","message":"Tue Apr 19 2022 17:40:22 GMT+0700 (เวลาอินโดจีน) PATCH /villager/update/undefined 400 110 - 34.070 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:42:41 GMT+0700 (เวลาอินโดจีน) GET /villager/getAll 200 455 - 3.696 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"error","message":"log❯❯▶ Petitions is empty."}
+{"level":"info","message":"Tue Apr 19 2022 17:42:54 GMT+0700 (เวลาอินโดจีน) GET /petition/getAll 404 44 - 18.006 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:43:31 GMT+0700 (เวลาอินโดจีน) POST /petition/create/625e91647b87b87067ece636 200 30 - 11.975 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:47:05 GMT+0700 (เวลาอินโดจีน) GET /petition/getAll 200 221 - 4.468 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:47:24 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63d 200 219 - 3.571 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:47:29 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63a 200 219 - 2.870 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:54:29 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63a 200 672 - 40.381 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:54:40 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63a 200 221 - 41.203 ms\n","meta":{"serverLogs":"server-logs"}}
+{"0":{"location":"params","msg":"Invalid value","param":"id","value":"{id}"},"level":"error","message":"(..\\routes\\controller\\petitionFunc.js:56)❯❯▶"}
+{"level":"info","message":"Tue Apr 19 2022 17:55:16 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/%7Bid%7D 400 83 - 914.962 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:55:22 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63d 200 26 - 17.609 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:55:28 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63a 200 26 - 4.008 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:56:38 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63a 200 2 - 28.090 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:56:42 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63d 200 219 - 5.773 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:58:17 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63d 304 - - 42.863 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:58:21 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63a 304 - - 4.480 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:58:47 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63a 304 - - 136.966 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:58:50 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63a 304 - - 4.892 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:59:36 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63a 404 49 - 24.649 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:59:39 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63d 304 - - 9.289 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 17:59:44 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63d 304 - - 4.029 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 18:01:32 GMT+0700 (เวลาอินโดจีน) GET /petition/filterByStatus?status=test 200 221 - 5.270 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"error","message":"log❯❯▶ testt not found."}
+{"level":"info","message":"Tue Apr 19 2022 18:01:38 GMT+0700 (เวลาอินโดจีน) GET /petition/filterByStatus?status=testt 404 18 - 786.407 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 18:02:05 GMT+0700 (เวลาอินโดจีน) GET /agent/getAll 200 193 - 14.696 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 18:02:28 GMT+0700 (เวลาอินโดจีน) PATCH /petition/update/625e92537b87b87067ece63d 200 58 - 36.405 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 18:02:34 GMT+0700 (เวลาอินโดจีน) PATCH /petition/update/625e92537b87b87067ece63d 200 58 - 12.566 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 18:02:52 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63d 200 218 - 4.770 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 18:04:07 GMT+0700 (เวลาอินโดจีน) DELETE /petition/delete/625d21056ad082b81028cf76 200 54 - 6.223 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 18:04:12 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63d 304 - - 5.596 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 18:04:14 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63d 304 - - 4.146 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 18:04:23 GMT+0700 (เวลาอินโดจีน) GET /petition/getAll 200 660 - 3.936 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 18:04:39 GMT+0700 (เวลาอินโดจีน) DELETE /petition/delete/625e92537b87b87067ece63d 200 54 - 6.047 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 18:04:49 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63d 200 219 - 3.797 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 18:04:52 GMT+0700 (เวลาอินโดจีน) GET /petition/getOne/625e92537b87b87067ece63d 304 - - 3.239 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"info","message":"Tue Apr 19 2022 18:05:46 GMT+0700 (เวลาอินโดจีน) DELETE /petition/delete/625e92537b87b87067ece63d 200 54 - 5.865 ms\n","meta":{"serverLogs":"server-logs"}}
+{"level":"error","message":"log❯❯▶ Petitions is empty."}
+{"level":"info","message":"Tue Apr 19 2022 18:06:03 GMT+0700 (เวลาอินโดจีน) GET /petition/getAll 404 44 - 41.776 ms\n","meta":{"serverLogs":"server-logs"}}

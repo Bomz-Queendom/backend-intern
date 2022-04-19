@@ -1,5 +1,5 @@
 const Villager = require("../../models/villager");
-const logger = require("../../logger/winstonLogger");
+const logger = require("../../logger/logger");
 const { validationResult } = require("express-validator");
 
 exports.findAllVillagers = async (req, res) => {
@@ -115,7 +115,6 @@ exports.deleteVillager = async (req, res) => {
             logger.error("The data to be deleted does not exist in the database.");
             return res.status(404).json({ massage: "The data to be deleted does not exist in the database." });
         }
-        logger.info(`${data.firstName} has been deleted..`);
         return res.send(`${data.firstName} has been deleted..`);
     }
     catch (error) {

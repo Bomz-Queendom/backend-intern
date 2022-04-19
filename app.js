@@ -2,8 +2,18 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+const rfs = require('rotating-file-stream');
+//logger
 var morgan = require('morgan');
-var logger = require("./logger/winstonLogger");
+var logger = require("./logger/logger");
+var { stream } = logger;
+
+const accessLogStream = rfs.createStream('access.log', {
+  interval: '1d',
+  path: path.join(__dirname, '/logger/logs'),
+});
+
+// upload file
 var uploadImage = require('express-fileupload');
 
 var indexRouter = require('./routes/index');
@@ -39,7 +49,21 @@ async function main() {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(morgan('dev'));
+//mogan
+morgan.token('th-date', (req, res) => {
+  const date = new Date();
+  return date;
+});
+app.use(morgan('common', { stream: accessLogStream }));
+app.use(
+  morgan(
+    ':th-date :method[pretty] :url :status :res[content-length] - :response-time ms',
+    {
+      stream: stream,
+    }
+  )
+);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

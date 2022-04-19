@@ -1,5 +1,5 @@
 const Villager = require("../../models/villager");
-const logger = require("../../logger/winstonLogger");
+const logger = require("../../logger/logger");
 const { validationResult } = require("express-validator");
 const { addLoggerAction } = require("./logAgentActionFunc");
 
@@ -62,13 +62,16 @@ exports.getOnePetition = async (req, res) => {
             logger.error(`${id} not found.`);
             return res.status(404).json(`${id} not found.`);
         }
-        let result = {};
+        let result = null;
         data.petitions.forEach(element => {
-            result = element;
+            if (element.id === id) {
+                result = element;
+            }
         });
         if (result != null) {
             return res.status(200).json(result);
         }
+        return res.status(404).json(`petition id ${id} not found.`);
     } catch (error) {
         logger.error(error.massage);
         return res.status(400).json({ message: error.message });

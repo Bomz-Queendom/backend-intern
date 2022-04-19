@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\backend-intern\\logger\\logs\\.cf12766ef9b1eecdfc3a4e87abea1da84dc08450-audit.json",
+    "files": [
+        {
+            "date": 1650363300405,
+            "name": "D:\\backend-intern\\logger\\logs\\nodejs-guide-2022-04-19.log",
+            "hash": "e233e13c9384b885e79581ed6d67afa6"
+        }
+    ],
+    "hashType": "md5"
+}

@@ -1,5 +1,5 @@
 const Agent = require("../../models/agent");
-const logger = require("../../logger/winstonLogger");
+const logger = require("../../logger/logger");
 const { validationResult } = require("express-validator");
 
 exports.createAgent = async (req, res) => {
