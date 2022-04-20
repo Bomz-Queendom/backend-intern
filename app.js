@@ -3,6 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 const rfs = require('rotating-file-stream');
+const cors = require('cors');
+
+//connect DB
+const InitiateMongoServer = require('./lib/connectDB');
+InitiateMongoServer();
+
 //logger
 var morgan = require('morgan');
 var logger = require("./logger/logger");
@@ -35,15 +41,6 @@ app.use(uploadImage({
   preserveExtension: true
 }))
 
-//mongoose
-const mongoose = require("mongoose");
-main().catch(err => {
-  logger.error(err);
-  console.log(err);
-});
-async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/deskplus', { useNewUrlParser: true });
-}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -67,6 +64,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
@@ -81,9 +79,10 @@ var agentRouter = require("./routes/agentRouter");
 app.use("/agent", agentRouter);
 
 var petitionRouter = require("./routes/petitionRouter");
-const req = require('express/lib/request');
-const res = require('express/lib/response');
 app.use('/petition', petitionRouter);
+
+var authRouter = require('./routes/authRouter');
+app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

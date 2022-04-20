@@ -66,6 +66,10 @@ exports.createVillager = async (req, res) => {
             logger.error(error.array());
             return res.status(400).json({ error: error.array() });
         }
+        const checkEmail = await Villager.findOne({ email: req.body.email });
+        if (checkEmail) {
+            return res.status(403).json({ massage: 'Email is already in use.' });
+        }
         let data = new Villager(req.body);
         const dataToSave = await data.save();
         return res.status(200).json(data);
