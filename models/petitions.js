@@ -6,9 +6,7 @@ const petitionsSchema = new mongoose.Schema({
     images: Array,
     needCorrective: String,
     status: String,
-    createDate: Date,
-    receivedDate: Date,
     endDate: Date
-});
+}, { timestamps: true });
 
 module.exports = petitionsSchema;

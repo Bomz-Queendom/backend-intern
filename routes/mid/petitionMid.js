@@ -8,7 +8,6 @@ exports.midCreate = [
     body("problemDetail").isString().not().isEmpty(),
     body("needCorrective").isString().not().isEmpty(),
     body("status").isString().not().isEmpty(),
-    body("createDate").isDate().not().isEmpty(),
 ]
 
 exports.midGetOne = [

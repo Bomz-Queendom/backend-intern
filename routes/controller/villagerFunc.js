@@ -59,27 +59,6 @@ exports.villagerSearch = async (req, res) => {
     }
 }
 
-exports.createVillager = async (req, res) => {
-    try {
-        const error = validationResult(req);
-        if (!error.isEmpty()) {
-            logger.error(error.array());
-            return res.status(400).json({ error: error.array() });
-        }
-        const checkEmail = await Villager.findOne({ email: req.body.email });
-        if (checkEmail) {
-            return res.status(403).json({ massage: 'Email is already in use.' });
-        }
-        let data = new Villager(req.body);
-        const dataToSave = await data.save();
-        return res.status(200).json(data);
-    }
-    catch (error) {
-        logger.error(error.massage);
-        return res.status(400).json({ message: error.message });
-    }
-}
-
 exports.updateVillager = async (req, res) => {
     try {
         const error = validationResult(req);
@@ -88,6 +67,13 @@ exports.updateVillager = async (req, res) => {
             return res.status(400).json({ error: error.array() });
         }
         const id = req.params.id;
+        req.body.address = {
+            houseNumber: req.body.houseNumber,
+            subDistrict: req.body.subDistrict,
+            district: req.body.district,
+            province: req.body.province,
+            postalCode: req.body.postalCode
+        }
         const updatedData = req.body;
         const options = { new: true };
 

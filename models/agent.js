@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-const jwt = require('jsonwebtoken');
-const jwtSecret = require('../config/secret').jwtSecret;
 
 const agentSchema = new mongoose.Schema({
     firstName: String,
@@ -10,12 +8,8 @@ const agentSchema = new mongoose.Schema({
     password: { type: String, required: true },
     jobTitle: String,
     phoneNum: String
-})
+}, { timestamps: true })
 
-agentSchema.methods.generateAuthToken = () => {
-    const token = jwt.sign({ _id: this._id }, jwtSecret);
-    return token;
-}
 
 const agentModels = mongoose.model("agents", agentSchema);
 module.exports = agentModels;

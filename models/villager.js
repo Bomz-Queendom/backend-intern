@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const petitionsSchema = require("./petitions");
 const addressSchema = require("./villagerAddress");
-const jwt = require('jsonwebtoken');
-const jwtSecret = require('../config/secret').jwtSecret;
 
 const villgerSchema = new mongoose.Schema({
   firstName: String,
@@ -21,10 +19,6 @@ const villgerSchema = new mongoose.Schema({
   petitions: [petitionsSchema]
 }, { timestamps: true });
 
-villgerSchema.methods.generateAuthToken = () => {
-  const token = jwt.sign({ _id: this._id }, jwtSecret);
-  return token;
-}
 
 const villagerModels = mongoose.model('villagers', villgerSchema);
 

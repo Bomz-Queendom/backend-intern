@@ -1,6 +1,6 @@
 /**
  * @swagger
- * /auth/villagerlogin:
+ * /auth/login:
  *  post:
  *      description: user login
  *      tags: [Authentication]
@@ -20,27 +20,6 @@
  *              description : Bad Request
  */
 
-/**
- * @swagger
- * /auth/agentlogin:
- *  post:
- *      description: user login
- *      tags: [Authentication]
- *      parameters:
- *          - in: formData
- *            name: email
- *            description: user email
- *          - in: formData
- *            name: password
- *            description: user password
- *      responses:
- *          200:
- *              description : ok
- *          201:
- *              description : created
- *          400: 
- *              description : Bad Request
- */
 
 /**
  * @swagger
@@ -107,7 +86,6 @@
  *              description : Forbidden
  *          400: 
  *              description : Bad Request
- * 
  */
 
 /**
@@ -124,7 +102,7 @@
  *            name: lastName
  *            description: agent first name.
  *          - in: formData
- *            name: agnetId
+ *            name: agentPin
  *            description: agent pin.
  *          - in: formData
  *            name: email
@@ -132,6 +110,12 @@
  *          - in: formData
  *            name: password
  *            description: agent password.
+ *          - in: formData
+ *            name: jobTitle
+ *            description: agent job title.
+ *          - in: formData
+ *            name: phoneNum
+ *            description: agent phone number.
  *      responses:
  *          200:
  *              description : ok
@@ -140,4 +124,25 @@
  *          400: 
  *              description : Bad Request
  * 
+ */
+
+/**
+ * @swagger
+ * /auth/myProfile:
+ *  get:
+ *      description: user proflie.
+ *      tags: [Authentication]
+ *      parameters:
+ *          - in: header
+ *            name: x-auth-token
+ *            schema:
+ *              type: string
+ *            description: token login
+ *      responses:
+ *          200:
+ *              description : ok
+ *          404:
+ *              description : not found
+ *          400:
+ *              description : Bad Request
  */

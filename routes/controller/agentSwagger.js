@@ -1,38 +1,6 @@
 
 /**
  * @swagger
- * /agent/create:
- *  post:
- *      description: create agent.
- *      tags : [Agent]
- *      parameters:
- *          - in: formData
- *            name: firstName
- *            type: string
- *          - in: formData
- *            name: lastName
- *            type: string
- *          - in: formData
- *            name: agentPin
- *            type: string
- *          - in: formData
- *            name: email
- *            type: string
- *          - in: formData
- *            name: jobTitle
- *            type: string
- *          - in: formData
- *            name: phoneNum
- *            type: string
- *      responses:
- *          200:
- *              description : success
- *          400: 
- *              description : Bad Request
- */
-
-/**
- * @swagger
  * /agent/getAll:
  *  get:
  *    description: get all agent
@@ -104,6 +72,9 @@
  *            type: string
  *          - in: formData
  *            name: email
+ *            type: string
+ *          - in: formData
+ *            name: password
  *            type: string
  *          - in: formData
  *            name: jobTitle

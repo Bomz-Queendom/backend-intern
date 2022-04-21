@@ -4,6 +4,8 @@ const logger = require("../../logger/logger");
 const { validationResult } = require("express-validator");
 const bcrypt = require('bcryptjs');
 const secretSalt = require('../../config/secret').salt;
+const jwt = require('jsonwebtoken');
+const jwtSecret = require('../../config/secret').jwtSecret;
 
 exports.villagerSignUp = async (req, res) => {
     try {
@@ -58,69 +60,63 @@ exports.agentSignUp = async (req, res) => {
     }
 }
 
-exports.villagerLogin = async (req, res) => {
+exports.getProfile = async (req, res) => {
     try {
         const error = validationResult(req);
         if (!error.isEmpty()) {
             logger.error(error.array());
             return res.status(400).json({ error: error.array() });
         }
-        const data = await Villager.findOne({ email: req.body.email });
+        if (req.user.agentPin) {
+            let data = await Agent.findById(req.user.id);
+            if (!data) {
+                logger.error(`${req.user.id} not found.`);
+                return res.status(404).json({ massage: `${req.user.id} not found.` });
+            }
+            return res.status(200).json(data);
+        }
+        let data = await Villager.findById(req.user.id);
         if (!data) {
-            return res.status(400).json({ massage: 'Invalid email.' });
-        }
-
-        const validPassword = await bcrypt.compare(req.body.password, data.password);
-        if (!validPassword) {
-            return res.status(400).json({ massage: 'Invalid password.' });
-        }
-        const token = data.generateAuthToken();
-        return res.status(201).json({ 'token': token });
-    } catch (error) {
-        logger.error(error.massage);
-        return res.status(400).json({ message: error.message });
-    }
-}
-
-exports.agentLogin = async (req, res) => {
-    try {
-        const error = validationResult(req);
-        if (!error.isEmpty()) {
-            logger.error(error.array());
-            return res.status(400).json({ error: error.array() });
-        }
-        const data = await Agent.findOne({ email: req.body.email });
-        if (!data) {
-            return res.status(400).json({ massage: 'Invalid email.' });
-        }
-
-        const validPassword = await bcrypt.compare(req.body.password, data.password);
-        if (!validPassword) {
-            return res.status(400).json({ massage: 'Invalid password.' });
-        }
-        const token = data.generateAuthToken();
-        return res.status(201).json({ 'token': token });
-    } catch (error) {
-        logger.error(error.massage);
-        return res.status(400).json({ message: error.message });
-    }
-}
-
-exports.getOneProfile = async (req, res) => {
-    try {
-        const error = validationResult(req);
-        if (!error.isEmpty()) {
-            logger.error(error.array());
-            return res.status(400).json({ error: error.array() });
-        }
-        let data = await Villager.findById(req.params.id);
-        if (!data) {
-            logger.error(`${req.params.id} not found.`);
-            return res.status(404).json({ massage: `${req.params.id} not found.` });
+            logger.error(`${req.user.id} not found.`);
+            return res.status(404).json({ massage: `${req.user.id} not found.` });
         }
         return res.status(200).json(data);
     }
     catch (error) {
+        logger.error(error.massage);
+        return res.status(400).json({ message: error.message });
+    }
+}
+
+exports.Login = async (req, res) => {
+    try {
+        const error = validationResult(req);
+        if (!error.isEmpty()) {
+            logger.error(error.array());
+            return res.status(400).json({ error: error.array() });
+        }
+        const Vdata = await Villager.findOne({ email: req.body.email });
+        const Adata = await Agent.findOne({ email: req.body.email });
+        if (Vdata) {
+            const validPassword = await bcrypt.compare(req.body.password, Vdata.password);
+            if (!validPassword) {
+                return res.status(400).json({ massage: 'Invalid password.' });
+            }
+            let token = jwt.sign({ id: Vdata.id }, jwtSecret);
+            return res.status(201).json({ 'token': token });
+        } else if (Adata) {
+            const validPassword = await bcrypt.compare(req.body.password, Adata.password);
+            if (!validPassword) {
+                return res.status(400).json({ massage: 'Invalid password.' });
+            }
+            let token = jwt.sign({ id: Adata.id, agentPin: Adata.agentPin }, jwtSecret);
+            return res.status(201).json({ 'token': token });
+        } else {
+            if (!Vdata && !Adata) {
+                return res.status(400).json({ massage: 'Invalid email.' });
+            }
+        }
+    } catch (error) {
         logger.error(error.massage);
         return res.status(400).json({ message: error.message });
     }
