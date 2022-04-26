@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/usr/src/app/logger/logs/.a449a8c5fe8f7661bace77cfc7972d42bc84cd5c-audit.json",
+    "files": [
+        {
+            "date": 1650882918489,
+            "name": "/usr/src/app/logger/logs/nodejs-guide-2022-04-25.log",
+            "hash": "d83e4bd6c54ec39512120495952b7253"
+        },
+        {
+            "date": 1650947092047,
+            "name": "/usr/src/app/logger/logs/nodejs-guide-2022-04-26.log",
+            "hash": "01090231239e7cb2dbb7b3d1de617532"
+        }
+    ],
+    "hashType": "md5"
+}

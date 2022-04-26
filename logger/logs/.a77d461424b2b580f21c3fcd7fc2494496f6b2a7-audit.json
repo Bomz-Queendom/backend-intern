@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/bomz-queendom/Documents/backend-intern/logger/logs/.a77d461424b2b580f21c3fcd7fc2494496f6b2a7-audit.json",
+    "files": [
+        {
+            "date": 1650881497521,
+            "name": "/Users/bomz-queendom/Documents/backend-intern/logger/logs/nodejs-guide-2022-04-25.log",
+            "hash": "51e4d5525b05e725251c0e1d1c80bef0"
+        }
+    ],
+    "hashType": "md5"
+}

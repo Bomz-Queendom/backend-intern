@@ -237,3 +237,14 @@
 ::1 - - [21/Apr/2022:04:23:25 +0000] "GET /agent/getAll HTTP/1.1" 200 260
 ::1 - - [21/Apr/2022:04:24:57 +0000] "PATCH /agent/update/6260d2fecc071f293eadbdc0 HTTP/1.1" 200 65
 ::1 - - [21/Apr/2022:04:25:05 +0000] "GET /agent/getOne/6260d2fecc071f293eadbdc0 HTTP/1.1" 200 262
+::1 - - [25/Apr/2022:10:11:50 +0000] "GET /villager/api-docs HTTP/1.1" 404 1153
+::1 - - [25/Apr/2022:10:11:50 +0000] "GET /favicon.ico HTTP/1.1" 404 1153
+::1 - - [25/Apr/2022:10:12:05 +0000] "GET /petition/getAll HTTP/1.1" 200 296
+::1 - - [25/Apr/2022:10:15:34 +0000] "GET /petition/getAll HTTP/1.1" 404 44
+::ffff:172.18.0.1 - - [25/Apr/2022:10:58:08 +0000] "GET /petition/getAll HTTP/1.1" - -
+::ffff:172.18.0.1 - - [26/Apr/2022:04:36:42 +0000] "GET /agent/getAll HTTP/1.1" 404 41
+::ffff:172.18.0.1 - - [26/Apr/2022:04:40:31 +0000] "POST /auth/agentSignUp HTTP/1.1" 200 52
+::ffff:172.18.0.1 - - [26/Apr/2022:04:40:56 +0000] "GET /agent/getAll HTTP/1.1" 200 353
+::ffff:172.18.0.1 - - [26/Apr/2022:04:50:07 +0000] "POST /auth/login HTTP/1.1" 201 188
+::ffff:172.18.0.1 - - [26/Apr/2022:06:49:43 +0000] "POST /auth/login HTTP/1.1" 201 188
+::ffff:172.18.0.1 - - [26/Apr/2022:06:49:50 +0000] "GET /agent/getAll HTTP/1.1" 304 -
